@@ -12,6 +12,7 @@ public class MyFirstTimerRouter extends RouteBuilder {
 
   @Autowired
   private GetCurrentTimeBean currentTimeBean;
+
   @Autowired
   private SimpleLoggingProcessingComponent loggingComponent;
 
@@ -22,6 +23,7 @@ public class MyFirstTimerRouter extends RouteBuilder {
           .log("${body}")
           .bean(loggingComponent)
           .log("${body}")
+          .process(new SimpleLoggingProcessor())
           .to("log:first-timer");
   }
 
