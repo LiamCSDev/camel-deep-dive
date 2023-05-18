@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class ActiveMqReceiverRouter extends RouteBuilder {
 
   Logger logger = LoggerFactory.getLogger(ActiveMqReceiverRouter.class);
