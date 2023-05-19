@@ -19,7 +19,11 @@ public class MyFileRouter extends RouteBuilder {
           .otherwise()
             .log("Not an XML FILE")
         .end()
-        .log("${messageHistory} ${headers}")
+        .to("direct://log-file-values")
         .to("file:files/output");
+
+
+    from("direct:log-file-values")
+        .log("${messageHistory} ${headers}");
   }
 }
